@@ -224,7 +224,7 @@
      "glb": "stage-8.glb",
      "part": null,
      "label": null,
-     "bytes": 480788
+     "bytes": 458112
     }
    ]
   }
@@ -236,7 +236,7 @@
    "note": "Our fixed Nudura supply price and the turnkey-kit BOQ (rates editable on the BOQ page).",
    "zip": {
     "file": "downloads/DG-T01 Price + BOQ.zip",
-    "bytes": 11026,
+    "bytes": 11029,
     "count": 2
    },
    "docs": [
@@ -246,7 +246,7 @@
      "file": "docs/quote/DG-T01-BQ-01 Turnkey BOQ and programme.pdf",
      "pages": 2,
      "thumb": "thumbs/DG-T01-BQ-01.png",
-     "bytes": 10344,
+     "bytes": 10333,
      "number": "DG-T01-BQ-01",
      "view": "stage-8",
      "view_opts": {}
@@ -257,7 +257,7 @@
      "file": "docs/quote/DG-T01-PR-01 Price summary.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T01-PR-01.png",
-     "bytes": 4346,
+     "bytes": 4349,
      "number": "DG-T01-PR-01",
      "view": "stage-8",
      "view_opts": {}
@@ -370,7 +370,7 @@
  ],
  "download_all": {
   "file": "downloads/DG-T01 Standard garage Type 01 - Brick single garage in Nudura ICF - Quotation Q01.zip",
-  "bytes": 250308,
+  "bytes": 250323,
   "count": 7,
   "title": "Download everything"
  }
