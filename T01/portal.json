@@ -63,7 +63,7 @@
    "kind": "stage",
    "n": 7,
    "title": "Opening tapes",
-   "desc": "Tremco CPG illbruck ME220 external and ME110 internal window membranes (garage door excluded).",
+   "desc": "Tremco CPG illbruck ME110 internal window membrane round every opening (garage door excluded).",
    "focus": false
   },
   {
@@ -133,7 +133,7 @@
      "glb": "stage-1.glb",
      "part": null,
      "label": null,
-     "bytes": 4188
+     "bytes": 7220
     }
    ]
   },
@@ -185,7 +185,7 @@
      "glb": "stage-5.glb",
      "part": null,
      "label": null,
-     "bytes": 55028
+     "bytes": 13112
     }
    ]
   },
@@ -205,13 +205,13 @@
   {
    "n": 7,
    "title": "Opening tapes",
-   "desc": "Tremco CPG illbruck ME220 external and ME110 internal window membranes (garage door excluded).",
+   "desc": "Tremco CPG illbruck ME110 internal window membrane round every opening (garage door excluded).",
    "files": [
     {
      "glb": "stage-7.glb",
      "part": null,
      "label": null,
-     "bytes": 4692
+     "bytes": 2852
     }
    ]
   },
@@ -236,7 +236,7 @@
    "note": "Our fixed Nudura supply price and the turnkey-kit BOQ (rates editable on the BOQ page).",
    "zip": {
     "file": "downloads/DG-T01 Price + BOQ.zip",
-    "bytes": 11029,
+    "bytes": 13117,
     "count": 2
    },
    "docs": [
@@ -244,9 +244,9 @@
      "id": "DG-T01-BQ-01",
      "title": "Turnkey BOQ and programme",
      "file": "docs/quote/DG-T01-BQ-01 Turnkey BOQ and programme.pdf",
-     "pages": 2,
+     "pages": 4,
      "thumb": "thumbs/DG-T01-BQ-01.png",
-     "bytes": 10333,
+     "bytes": 13477,
      "number": "DG-T01-BQ-01",
      "view": "stage-8",
      "view_opts": {}
@@ -257,7 +257,7 @@
      "file": "docs/quote/DG-T01-PR-01 Price summary.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T01-PR-01.png",
-     "bytes": 4349,
+     "bytes": 4386,
      "number": "DG-T01-PR-01",
      "view": "stage-8",
      "view_opts": {}
@@ -276,7 +276,7 @@
    "note": "The ICF general arrangement, the wall elevations and a section.",
    "zip": {
     "file": "downloads/DG-T01 ICF drawings.zip",
-    "bytes": 227541,
+    "bytes": 265126,
     "count": 4
    },
    "docs": [
@@ -286,7 +286,7 @@
      "file": "docs/icf/DG-T01-GA-01 Garage ICF General Arrangement.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T01-GA-01.png",
-     "bytes": 56361,
+     "bytes": 62656,
      "number": "DG-T01-GA-01",
      "view": "stage-1",
      "view_opts": {}
@@ -297,7 +297,7 @@
      "file": "docs/icf/DG-T01-EL-01 North and South Elevations.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T01-EL-01.png",
-     "bytes": 73018,
+     "bytes": 75193,
      "number": "DG-T01-EL-01",
      "view": "elev-N",
      "view_opts": {}
@@ -308,7 +308,7 @@
      "file": "docs/icf/DG-T01-EL-02 East and West Elevations.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T01-EL-02.png",
-     "bytes": 87219,
+     "bytes": 78295,
      "number": "DG-T01-EL-02",
      "view": "elev-E",
      "view_opts": {}
@@ -319,7 +319,7 @@
      "file": "docs/icf/DG-T01-SE-01 Section A-A.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T01-SE-01.png",
-     "bytes": 67250,
+     "bytes": 114344,
      "number": "DG-T01-SE-01",
      "view": "stage-8",
      "view_opts": {}
@@ -344,7 +344,6 @@
   {
    "label": "Opening tapes",
    "materials": [
-    "illbruck ME220*",
     "illbruck ME110*"
    ],
    "default": true,
@@ -370,7 +369,7 @@
  ],
  "download_all": {
   "file": "downloads/DG-T01 Standard garage Type 01 - Brick single garage in Nudura ICF - Quotation Q01.zip",
-  "bytes": 250323,
+  "bytes": 297822,
   "count": 7,
   "title": "Download everything"
  }

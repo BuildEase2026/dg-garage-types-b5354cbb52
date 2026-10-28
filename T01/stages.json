@@ -11,7 +11,7 @@
      "glb": "stage-1.glb",
      "part": null,
      "label": null,
-     "bytes": 4188
+     "bytes": 7220
     }
    ]
   },
@@ -63,7 +63,7 @@
      "glb": "stage-5.glb",
      "part": null,
      "label": null,
-     "bytes": 55028
+     "bytes": 13112
     }
    ]
   },
@@ -83,13 +83,13 @@
   {
    "n": 7,
    "title": "Opening tapes",
-   "desc": "Tremco CPG illbruck ME220 external and ME110 internal window membranes (garage door excluded).",
+   "desc": "Tremco CPG illbruck ME110 internal window membrane round every opening (garage door excluded).",
    "files": [
     {
      "glb": "stage-7.glb",
      "part": null,
      "label": null,
-     "bytes": 4692
+     "bytes": 2852
     }
    ]
   },
