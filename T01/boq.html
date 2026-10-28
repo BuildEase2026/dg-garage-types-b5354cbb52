@@ -722,7 +722,7 @@ const D = {
   },
   {
    "sec": "Bill 5 - Roof coverings + rainwater goods",
-   "item": "Downpipe sets 68 round black",
+   "item": "Downpipe sets 68 round black: swan neck to the outlet, clipped to the side wall (4 clips), shoe",
    "key": "downpipe",
    "qty": 2,
    "unit": "nr",
@@ -1028,7 +1028,7 @@ document.getElementById("tA").innerHTML = "<tr><th>Item</th><th>SKU</th><th>Qty<
 function buildB(){
   let h = "<tr><th>Item</th><th>Qty</th><th>Unit</th><th>Supply rate</th><th>Install rate</th><th>Supply</th><th>Install</th><th>Total</th><th>Source / note</th></tr>", sec="";
   D.boq.forEach((b,i)=>{
-    if (b.sec !== sec){ sec=b.sec; h += `<tr class="sec"><td colspan="7">${sec}</td><td class="n" id="s-${sec.split(" ")[0]}"></td><td></td></tr>`; }
+    if (b.sec !== sec){ sec=b.sec; h += `<tr class="sec"><td colspan="7">${sec}</td><td class="n" id="s-${sec.split(" - ")[0].replace(/ /g,"-")}"></td><td></td></tr>`; }
     h += `<tr><td>${b.item}</td><td class="n"><input type="number" step="0.01" id="q${i}" aria-label="quantity"></td><td>${b.unit}</td>
       <td class="n"><input type="number" step="0.01" id="m${i}" aria-label="material rate"></td><td class="n"><input type="number" step="0.01" id="h${i}" aria-label="install rate"></td>
       <td class="n" id="mt${i}"></td><td class="n" id="lt${i}"></td><td class="n" id="tt${i}"></td><td class="src">${b.note}</td></tr>`;
@@ -1047,7 +1047,7 @@ function buildC(){
 let last;
 function calc(){
   let net=0; const secs={};
-  D.boq.forEach((b,i)=>{ const r=st.rows[i], m=r.qty*r.mat, l=r.qty*r.inst, t=m+l; net+=t; const s=b.sec.split(" ")[0]; secs[s]=(secs[s]||0)+t;
+  D.boq.forEach((b,i)=>{ const r=st.rows[i], m=r.qty*r.mat, l=r.qty*r.inst, t=m+l; net+=t; const s=b.sec.split(" - ")[0].replace(/ /g,"-"); secs[s]=(secs[s]||0)+t;
     document.getElementById("mt"+i).textContent=f2(m); document.getElementById("lt"+i).textContent=f2(l); document.getElementById("tt"+i).textContent=f2(t); });
   Object.entries(secs).forEach(([s,v])=>{ const el=document.getElementById("s-"+s); if(el) el.textContent=f2(v); });
   const ohp = net*(1+st.ohp/100), tot = D.supply_total+ohp, cont = tot*(1+st.cont/100), vat = cont*(1+st.vat/100);
