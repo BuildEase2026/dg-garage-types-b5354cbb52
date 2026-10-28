@@ -1,0 +1,110 @@
+{
+ "job": "Standard garage Type 01 - Brick single garage in Nudura ICF",
+ "revision": "Q01",
+ "stages": [
+  {
+   "n": 1,
+   "title": "Raft slab",
+   "desc": "Indicative 200 RC raft with a 600 x 450 thickened edge under the ICF, on DPM and 150 hardcore (engineer to design).",
+   "files": [
+    {
+     "glb": "stage-1.glb",
+     "part": null,
+     "label": null,
+     "bytes": 4188
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Nudura ICF walls",
+   "desc": "Nudura 6in Standard on Nudura Bond, 3,639 x 6,077 outside - webs on the grid from both corners, NO stack joints; eaves walls 5 courses to the plate, gables raked to the roof; garage door with a one-course lintel, personnel door and windows on course lines. Every form as it would be laid.",
+   "files": [
+    {
+     "glb": "stage-2.glb",
+     "part": null,
+     "label": null,
+     "bytes": 206912
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Roof structure",
+   "desc": "Trussed rafters (fink) @600 with binders, gable ladders (indicative).",
+   "files": [
+    {
+     "glb": "stage-3.glb",
+     "part": null,
+     "label": null,
+     "bytes": 38836
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Roof membrane + battens",
+   "desc": "Breathable roofing membrane and 25 x 50 treated battens.",
+   "files": [
+    {
+     "glb": "stage-4.glb",
+     "part": null,
+     "label": null,
+     "bytes": 6816
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Tiles, fascia, soffit + rainwater goods",
+   "desc": "Marley Modern smooth grey concrete interlocking tiles, every tile drawn in broken bond, half-round dry ridge, dry verge, PVC-u fascia / soffit / 22 x 225 barge boards, half-round gutters + downpipes.",
+   "files": [
+    {
+     "glb": "stage-5.glb",
+     "part": null,
+     "label": null,
+     "bytes": 55028
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Windows + doors",
+   "desc": "Anthracite (RAL 7016) window(s), composite personnel door, electric roller garage door (supplier).",
+   "files": [
+    {
+     "glb": "stage-6.glb",
+     "part": null,
+     "label": null,
+     "bytes": 20500
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Opening tapes",
+   "desc": "Tremco CPG illbruck ME220 external and ME110 internal window membranes (garage door excluded).",
+   "files": [
+    {
+     "glb": "stage-7.glb",
+     "part": null,
+     "label": null,
+     "bytes": 4692
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Monolith BrickPlus brick slips",
+   "desc": "Monolith BrickPlus brick slip system (or equal) on the Nudura EPS, every slip drawn: 215 x 65 x 20 slips at 75 courses, 10 joints, L-shaped corner slips in half bond, cut to the rakes and openings, returned into the reveals to the frames.",
+   "files": [
+    {
+     "glb": "stage-8.glb",
+     "part": null,
+     "label": null,
+     "bytes": 480788
+    }
+   ]
+  }
+ ]
+}

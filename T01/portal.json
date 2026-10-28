@@ -1,0 +1,377 @@
+{
+ "portal": "BuildEase ICF Project Environment",
+ "project": {
+  "client": "Dortech Direct (James, MD) via Andy Claridge, Tremco CPG",
+  "job": "Standard garage Type 01 - Brick single garage in Nudura ICF",
+  "number_prefix": "DG-T01",
+  "status": "QUOTATION",
+  "revision": "Q01",
+  "model_title": "DG-T01 Standard garage Type 01 - Brick single garage in Nudura ICF - Quotation Q01"
+ },
+ "default_view": "stage-8",
+ "views": [
+  {
+   "id": "stage-1",
+   "kind": "stage",
+   "n": 1,
+   "title": "Raft slab",
+   "desc": "Indicative 200 RC raft with a 600 x 450 thickened edge under the ICF, on DPM and 150 hardcore (engineer to design).",
+   "focus": false
+  },
+  {
+   "id": "stage-2",
+   "kind": "stage",
+   "n": 2,
+   "title": "Nudura ICF walls",
+   "desc": "Nudura 6in Standard on Nudura Bond, 3,639 x 6,077 outside - webs on the grid from both corners, NO stack joints; eaves walls 5 courses to the plate, gables raked to the roof; garage door with a one-course lintel, personnel door and windows on course lines. Every form as it would be laid.",
+   "focus": false
+  },
+  {
+   "id": "stage-3",
+   "kind": "stage",
+   "n": 3,
+   "title": "Roof structure",
+   "desc": "Trussed rafters (fink) @600 with binders, gable ladders (indicative).",
+   "focus": false
+  },
+  {
+   "id": "stage-4",
+   "kind": "stage",
+   "n": 4,
+   "title": "Roof membrane + battens",
+   "desc": "Breathable roofing membrane and 25 x 50 treated battens.",
+   "focus": false
+  },
+  {
+   "id": "stage-5",
+   "kind": "stage",
+   "n": 5,
+   "title": "Tiles, fascia, soffit + rainwater goods",
+   "desc": "Marley Modern smooth grey concrete interlocking tiles, every tile drawn in broken bond, half-round dry ridge, dry verge, PVC-u fascia / soffit / 22 x 225 barge boards, half-round gutters + downpipes.",
+   "focus": false
+  },
+  {
+   "id": "stage-6",
+   "kind": "stage",
+   "n": 6,
+   "title": "Windows + doors",
+   "desc": "Anthracite (RAL 7016) window(s), composite personnel door, electric roller garage door (supplier).",
+   "focus": false
+  },
+  {
+   "id": "stage-7",
+   "kind": "stage",
+   "n": 7,
+   "title": "Opening tapes",
+   "desc": "Tremco CPG illbruck ME220 external and ME110 internal window membranes (garage door excluded).",
+   "focus": false
+  },
+  {
+   "id": "stage-8",
+   "kind": "stage",
+   "n": 8,
+   "title": "Monolith BrickPlus brick slips",
+   "desc": "Monolith BrickPlus brick slip system (or equal) on the Nudura EPS, every slip drawn: 215 x 65 x 20 slips at 75 courses, 10 joints, L-shaped corner slips in half bond, cut to the rakes and openings, returned into the reveals to the frames.",
+   "focus": false
+  },
+  {
+   "id": "elev-N",
+   "kind": "elevation",
+   "n": 8,
+   "title": "North elevation",
+   "dir": [
+    0.0,
+    0.12,
+    -1.0
+   ],
+   "desc": "Complete structure seen from the north."
+  },
+  {
+   "id": "elev-S",
+   "kind": "elevation",
+   "n": 8,
+   "title": "South elevation",
+   "dir": [
+    0.0,
+    0.12,
+    1.0
+   ],
+   "desc": "Complete structure seen from the south."
+  },
+  {
+   "id": "elev-E",
+   "kind": "elevation",
+   "n": 8,
+   "title": "East elevation",
+   "dir": [
+    1.0,
+    0.12,
+    0.0
+   ],
+   "desc": "Complete structure seen from the east."
+  },
+  {
+   "id": "elev-W",
+   "kind": "elevation",
+   "n": 8,
+   "title": "West elevation",
+   "dir": [
+    -1.0,
+    0.12,
+    0.0
+   ],
+   "desc": "Complete structure seen from the west."
+  }
+ ],
+ "stages": [
+  {
+   "n": 1,
+   "title": "Raft slab",
+   "desc": "Indicative 200 RC raft with a 600 x 450 thickened edge under the ICF, on DPM and 150 hardcore (engineer to design).",
+   "files": [
+    {
+     "glb": "stage-1.glb",
+     "part": null,
+     "label": null,
+     "bytes": 4188
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Nudura ICF walls",
+   "desc": "Nudura 6in Standard on Nudura Bond, 3,639 x 6,077 outside - webs on the grid from both corners, NO stack joints; eaves walls 5 courses to the plate, gables raked to the roof; garage door with a one-course lintel, personnel door and windows on course lines. Every form as it would be laid.",
+   "files": [
+    {
+     "glb": "stage-2.glb",
+     "part": null,
+     "label": null,
+     "bytes": 206912
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Roof structure",
+   "desc": "Trussed rafters (fink) @600 with binders, gable ladders (indicative).",
+   "files": [
+    {
+     "glb": "stage-3.glb",
+     "part": null,
+     "label": null,
+     "bytes": 38836
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Roof membrane + battens",
+   "desc": "Breathable roofing membrane and 25 x 50 treated battens.",
+   "files": [
+    {
+     "glb": "stage-4.glb",
+     "part": null,
+     "label": null,
+     "bytes": 6816
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Tiles, fascia, soffit + rainwater goods",
+   "desc": "Marley Modern smooth grey concrete interlocking tiles, every tile drawn in broken bond, half-round dry ridge, dry verge, PVC-u fascia / soffit / 22 x 225 barge boards, half-round gutters + downpipes.",
+   "files": [
+    {
+     "glb": "stage-5.glb",
+     "part": null,
+     "label": null,
+     "bytes": 55028
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Windows + doors",
+   "desc": "Anthracite (RAL 7016) window(s), composite personnel door, electric roller garage door (supplier).",
+   "files": [
+    {
+     "glb": "stage-6.glb",
+     "part": null,
+     "label": null,
+     "bytes": 20500
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Opening tapes",
+   "desc": "Tremco CPG illbruck ME220 external and ME110 internal window membranes (garage door excluded).",
+   "files": [
+    {
+     "glb": "stage-7.glb",
+     "part": null,
+     "label": null,
+     "bytes": 4692
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Monolith BrickPlus brick slips",
+   "desc": "Monolith BrickPlus brick slip system (or equal) on the Nudura EPS, every slip drawn: 215 x 65 x 20 slips at 75 courses, 10 joints, L-shaped corner slips in half bond, cut to the rakes and openings, returned into the reveals to the frames.",
+   "files": [
+    {
+     "glb": "stage-8.glb",
+     "part": null,
+     "label": null,
+     "bytes": 480788
+    }
+   ]
+  }
+ ],
+ "groups": [
+  {
+   "id": "quote",
+   "title": "Price + BOQ",
+   "note": "Our fixed Nudura supply price and the turnkey-kit BOQ (rates editable on the BOQ page).",
+   "zip": {
+    "file": "downloads/DG-T01 Price + BOQ.zip",
+    "bytes": 11026,
+    "count": 2
+   },
+   "docs": [
+    {
+     "id": "DG-T01-BQ-01",
+     "title": "Turnkey BOQ and programme",
+     "file": "docs/quote/DG-T01-BQ-01 Turnkey BOQ and programme.pdf",
+     "pages": 2,
+     "thumb": "thumbs/DG-T01-BQ-01.png",
+     "bytes": 10344,
+     "number": "DG-T01-BQ-01",
+     "view": "stage-8",
+     "view_opts": {}
+    },
+    {
+     "id": "DG-T01-PR-01",
+     "title": "Price summary",
+     "file": "docs/quote/DG-T01-PR-01 Price summary.pdf",
+     "pages": 1,
+     "thumb": "thumbs/DG-T01-PR-01.png",
+     "bytes": 4346,
+     "number": "DG-T01-PR-01",
+     "view": "stage-8",
+     "view_opts": {}
+    }
+   ],
+   "downloads": [
+    {
+     "file": "downloads/DG-T01 Turnkey BOQ.xlsx",
+     "title": "Turnkey BOQ (Excel - edit the yellow rates; the totals and programme update) (0.0 MB)"
+    }
+   ]
+  },
+  {
+   "id": "icf",
+   "title": "ICF drawings",
+   "note": "The ICF general arrangement, the wall elevations and a section.",
+   "zip": {
+    "file": "downloads/DG-T01 ICF drawings.zip",
+    "bytes": 227541,
+    "count": 4
+   },
+   "docs": [
+    {
+     "id": "DG-T01-GA-01",
+     "title": "Garage ICF General Arrangement",
+     "file": "docs/icf/DG-T01-GA-01 Garage ICF General Arrangement.pdf",
+     "pages": 1,
+     "thumb": "thumbs/DG-T01-GA-01.png",
+     "bytes": 56361,
+     "number": "DG-T01-GA-01",
+     "view": "stage-1",
+     "view_opts": {}
+    },
+    {
+     "id": "DG-T01-EL-01",
+     "title": "North and South Elevations",
+     "file": "docs/icf/DG-T01-EL-01 North and South Elevations.pdf",
+     "pages": 1,
+     "thumb": "thumbs/DG-T01-EL-01.png",
+     "bytes": 73018,
+     "number": "DG-T01-EL-01",
+     "view": "elev-N",
+     "view_opts": {}
+    },
+    {
+     "id": "DG-T01-EL-02",
+     "title": "East and West Elevations",
+     "file": "docs/icf/DG-T01-EL-02 East and West Elevations.pdf",
+     "pages": 1,
+     "thumb": "thumbs/DG-T01-EL-02.png",
+     "bytes": 87219,
+     "number": "DG-T01-EL-02",
+     "view": "elev-E",
+     "view_opts": {}
+    },
+    {
+     "id": "DG-T01-SE-01",
+     "title": "Section A-A",
+     "file": "docs/icf/DG-T01-SE-01 Section A-A.pdf",
+     "pages": 1,
+     "thumb": "thumbs/DG-T01-SE-01.png",
+     "bytes": 67250,
+     "number": "DG-T01-SE-01",
+     "view": "stage-8",
+     "view_opts": {}
+    }
+   ]
+  }
+ ],
+ "focus": null,
+ "isolate_stages": false,
+ "toggles": [
+  {
+   "label": "Monolith BrickPlus brick slips",
+   "materials": [
+    "Brick slip - red multi*",
+    "Slip pointing mortar"
+   ],
+   "default": true,
+   "stages": [
+    8
+   ]
+  },
+  {
+   "label": "Opening tapes",
+   "materials": [
+    "illbruck ME220*",
+    "illbruck ME110*"
+   ],
+   "default": true,
+   "stages": [
+    7,
+    8
+   ]
+  },
+  {
+   "label": "Roof tiles",
+   "materials": [
+    "Marley Modern tile*"
+   ],
+   "default": true,
+   "stages": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  }
+ ],
+ "download_all": {
+  "file": "downloads/DG-T01 Standard garage Type 01 - Brick single garage in Nudura ICF - Quotation Q01.zip",
+  "bytes": 250308,
+  "count": 7,
+  "title": "Download everything"
+ }
+}
