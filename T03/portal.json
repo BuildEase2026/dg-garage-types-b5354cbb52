@@ -297,7 +297,7 @@
    "note": "The ICF general arrangement, the wall elevations, a section and its 1:10 eaves / slab-edge details.",
    "zip": {
     "file": "downloads/DG-T03 ICF drawings.zip",
-    "bytes": 704777,
+    "bytes": 704270,
     "count": 7
    },
    "docs": [
@@ -329,7 +329,7 @@
      "file": "docs/icf/DG-T03-EL-02 East and West Elevations.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T03-EL-02.png",
-     "bytes": 175586,
+     "bytes": 175091,
      "number": "DG-T03-EL-02",
      "view": "elev-E",
      "view_opts": {}
@@ -423,7 +423,7 @@
  ],
  "download_all": {
   "file": "downloads/DG-T03 Standard garage Type 03 - Brick two-storey single in Nudura ICF - Quotation Q01.zip",
-  "bytes": 739633,
+  "bytes": 739126,
   "count": 10,
   "title": "Download everything"
  }
