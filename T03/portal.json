@@ -55,7 +55,7 @@
    "kind": "stage",
    "n": 6,
    "title": "Tiles, fascia, soffit + rainwater goods",
-   "desc": "Marley Modern smooth grey concrete interlocking tiles, every tile drawn in broken bond, half-round dry ridge, dry verge, PVC-u fascia / soffit / 22 x 225 barge boards, half-round gutters + downpipes.",
+   "desc": "Marley Modern smooth grey concrete interlocking tiles, every tile drawn in broken bond, half-round dry ridge, dry verge, PVC-u fascia / soffit / 22 x 250 barge boards, half-round gutters + downpipes.",
    "focus": false
   },
   {
@@ -193,20 +193,20 @@
      "glb": "stage-5.glb",
      "part": null,
      "label": null,
-     "bytes": 9260
+     "bytes": 9256
     }
    ]
   },
   {
    "n": 6,
    "title": "Tiles, fascia, soffit + rainwater goods",
-   "desc": "Marley Modern smooth grey concrete interlocking tiles, every tile drawn in broken bond, half-round dry ridge, dry verge, PVC-u fascia / soffit / 22 x 225 barge boards, half-round gutters + downpipes.",
+   "desc": "Marley Modern smooth grey concrete interlocking tiles, every tile drawn in broken bond, half-round dry ridge, dry verge, PVC-u fascia / soffit / 22 x 250 barge boards, half-round gutters + downpipes.",
    "files": [
     {
      "glb": "stage-6.glb",
      "part": null,
      "label": null,
-     "bytes": 89748
+     "bytes": 89756
     }
    ]
   },
@@ -257,7 +257,7 @@
    "note": "Our fixed Nudura supply price and the turnkey-kit BOQ (rates editable on the BOQ page).",
    "zip": {
     "file": "downloads/DG-T03 Price + BOQ.zip",
-    "bytes": 14094,
+    "bytes": 14103,
     "count": 2
    },
    "docs": [
@@ -267,7 +267,7 @@
      "file": "docs/quote/DG-T03-BQ-01 Turnkey BOQ and programme.pdf",
      "pages": 4,
      "thumb": "thumbs/DG-T03-BQ-01.png",
-     "bytes": 14677,
+     "bytes": 14682,
      "number": "DG-T03-BQ-01",
      "view": "stage-9",
      "view_opts": {}
@@ -297,7 +297,7 @@
    "note": "The ICF general arrangement, the wall elevations, a section and its 1:10 eaves / slab-edge details.",
    "zip": {
     "file": "downloads/DG-T03 ICF drawings.zip",
-    "bytes": 704270,
+    "bytes": 704860,
     "count": 7
    },
    "docs": [
@@ -318,7 +318,7 @@
      "file": "docs/icf/DG-T03-EL-01 North and South Elevations.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T03-EL-01.png",
-     "bytes": 105334,
+     "bytes": 105381,
      "number": "DG-T03-EL-01",
      "view": "elev-N",
      "view_opts": {}
@@ -329,7 +329,7 @@
      "file": "docs/icf/DG-T03-EL-02 East and West Elevations.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T03-EL-02.png",
-     "bytes": 175091,
+     "bytes": 175206,
      "number": "DG-T03-EL-02",
      "view": "elev-E",
      "view_opts": {}
@@ -340,7 +340,7 @@
      "file": "docs/icf/DG-T03-SE-01 Section A-A.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T03-SE-01.png",
-     "bytes": 235214,
+     "bytes": 235335,
      "number": "DG-T03-SE-01",
      "view": "stage-9",
      "view_opts": {}
@@ -351,7 +351,7 @@
      "file": "docs/icf/DG-T03-SE-02 Section B-B.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T03-SE-02.png",
-     "bytes": 164607,
+     "bytes": 164535,
      "number": "DG-T03-SE-02",
      "view": "stage-9",
      "view_opts": {}
@@ -362,7 +362,7 @@
      "file": "docs/icf/DG-T03-DT-01 Eaves Detail.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T03-DT-01.png",
-     "bytes": 69351,
+     "bytes": 69383,
      "number": "DG-T03-DT-01",
      "view": "stage-1",
      "view_opts": {}
@@ -373,7 +373,7 @@
      "file": "docs/icf/DG-T03-DT-02 Slab Edge Detail.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T03-DT-02.png",
-     "bytes": 65321,
+     "bytes": 65335,
      "number": "DG-T03-DT-02",
      "view": "stage-1",
      "view_opts": {}
@@ -423,7 +423,7 @@
  ],
  "download_all": {
   "file": "downloads/DG-T03 Standard garage Type 03 - Brick two-storey single in Nudura ICF - Quotation Q01.zip",
-  "bytes": 739126,
+  "bytes": 739726,
   "count": 10,
   "title": "Download everything"
  }

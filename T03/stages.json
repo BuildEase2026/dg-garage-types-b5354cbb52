@@ -63,20 +63,20 @@
      "glb": "stage-5.glb",
      "part": null,
      "label": null,
-     "bytes": 9260
+     "bytes": 9256
     }
    ]
   },
   {
    "n": 6,
    "title": "Tiles, fascia, soffit + rainwater goods",
-   "desc": "Marley Modern smooth grey concrete interlocking tiles, every tile drawn in broken bond, half-round dry ridge, dry verge, PVC-u fascia / soffit / 22 x 225 barge boards, half-round gutters + downpipes.",
+   "desc": "Marley Modern smooth grey concrete interlocking tiles, every tile drawn in broken bond, half-round dry ridge, dry verge, PVC-u fascia / soffit / 22 x 250 barge boards, half-round gutters + downpipes.",
    "files": [
     {
      "glb": "stage-6.glb",
      "part": null,
      "label": null,
-     "bytes": 89748
+     "bytes": 89756
     }
    ]
   },
