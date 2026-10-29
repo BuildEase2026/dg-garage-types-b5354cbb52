@@ -185,7 +185,7 @@
      "glb": "stage-5.glb",
      "part": null,
      "label": null,
-     "bytes": 13112
+     "bytes": 60524
     }
    ]
   },
@@ -236,7 +236,7 @@
    "note": "Our fixed Nudura supply price and the turnkey-kit BOQ (rates editable on the BOQ page).",
    "zip": {
     "file": "downloads/DG-T01 Price + BOQ.zip",
-    "bytes": 13162,
+    "bytes": 13156,
     "count": 2
    },
    "docs": [
@@ -257,7 +257,7 @@
      "file": "docs/quote/DG-T01-PR-01 Price summary.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T01-PR-01.png",
-     "bytes": 4386,
+     "bytes": 4387,
      "number": "DG-T01-PR-01",
      "view": "stage-8",
      "view_opts": {}
@@ -276,7 +276,7 @@
    "note": "The ICF general arrangement, the wall elevations, a section and its 1:10 eaves / slab-edge details.",
    "zip": {
     "file": "downloads/DG-T01 ICF drawings.zip",
-    "bytes": 371977,
+    "bytes": 404559,
     "count": 6
    },
    "docs": [
@@ -297,7 +297,7 @@
      "file": "docs/icf/DG-T01-EL-01 North and South Elevations.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T01-EL-01.png",
-     "bytes": 75091,
+     "bytes": 81353,
      "number": "DG-T01-EL-01",
      "view": "elev-N",
      "view_opts": {}
@@ -308,7 +308,7 @@
      "file": "docs/icf/DG-T01-EL-02 East and West Elevations.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T01-EL-02.png",
-     "bytes": 78178,
+     "bytes": 99594,
      "number": "DG-T01-EL-02",
      "view": "elev-E",
      "view_opts": {}
@@ -319,7 +319,7 @@
      "file": "docs/icf/DG-T01-SE-01 Section A-A.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T01-SE-01.png",
-     "bytes": 114291,
+     "bytes": 125387,
      "number": "DG-T01-SE-01",
      "view": "stage-8",
      "view_opts": {}
@@ -330,7 +330,7 @@
      "file": "docs/icf/DG-T01-DT-01 Eaves Detail.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T01-DT-01.png",
-     "bytes": 69452,
+     "bytes": 70868,
      "number": "DG-T01-DT-01",
      "view": "stage-1",
      "view_opts": {}
@@ -391,7 +391,7 @@
  ],
  "download_all": {
   "file": "downloads/DG-T01 Standard garage Type 01 - Brick single garage in Nudura ICF - Quotation Q01.zip",
-  "bytes": 404798,
+  "bytes": 437369,
   "count": 9,
   "title": "Download everything"
  }
