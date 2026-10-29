@@ -1,0 +1,123 @@
+{
+ "job": "Standard garage Type 04 - Brick two-storey double in Nudura ICF",
+ "revision": "Q01",
+ "stages": [
+  {
+   "n": 1,
+   "title": "Raft slab",
+   "desc": "Indicative 200 RC raft with a 600 x 450 thickened edge under the ICF, on DPM and 150 hardcore (engineer to design).",
+   "files": [
+    {
+     "glb": "stage-1.glb",
+     "part": null,
+     "label": null,
+     "bytes": 7212
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Nudura ICF walls",
+   "desc": "Nudura 6in Standard on Nudura Bond, 6,483 x 7,499 outside - webs on the grid from both corners, NO stack joints; eaves walls 11 courses to the plate, gables raked to the roof; garage door with a one-course lintel, personnel door and windows on course lines. Every form as it would be laid.",
+   "files": [
+    {
+     "glb": "stage-2.glb",
+     "part": null,
+     "label": null,
+     "bytes": 635652
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "First floor + stair",
+   "desc": "304 metal-web floor joists across the width on ICF ledgers, 22 P5 deck, straight timber stair to AD K along the rear wall (foot at the east end, 900 landing at the top); 14 risers x 196 / 230 goings, 900 guarding round the well (cars still park inside).",
+   "files": [
+    {
+     "glb": "stage-3.glb",
+     "part": null,
+     "label": null,
+     "bytes": 157512
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Roof structure",
+   "desc": "Loose rafters on a glulam ridge, gable ladders (indicative).",
+   "files": [
+    {
+     "glb": "stage-4.glb",
+     "part": null,
+     "label": null,
+     "bytes": 39412
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Roof membrane + battens",
+   "desc": "Breathable roofing membrane and 25 x 50 treated battens.",
+   "files": [
+    {
+     "glb": "stage-5.glb",
+     "part": null,
+     "label": null,
+     "bytes": 9104
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Tiles, fascia, soffit + rainwater goods",
+   "desc": "Marley Modern smooth grey concrete interlocking tiles, every tile drawn in broken bond, half-round dry ridge, dry verge, PVC-u fascia / soffit / 22 x 325 barge boards, half-round gutters + downpipes.",
+   "files": [
+    {
+     "glb": "stage-6.glb",
+     "part": null,
+     "label": null,
+     "bytes": 104980
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Windows + doors",
+   "desc": "Anthracite (RAL 7016) window(s), composite personnel door, electric roller garage door (supplier).",
+   "files": [
+    {
+     "glb": "stage-7.glb",
+     "part": null,
+     "label": null,
+     "bytes": 57188
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Opening tapes",
+   "desc": "Tremco CPG illbruck ME110 internal window membrane round every opening (garage door excluded).",
+   "files": [
+    {
+     "glb": "stage-8.glb",
+     "part": null,
+     "label": null,
+     "bytes": 5500
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Monolith BrickPlus brick slips",
+   "desc": "Monolith BrickPlus brick slip system (or equal) on the Nudura EPS, every slip drawn: 215 x 65 x 20 slips at 75 courses, 10 joints, L-shaped corner slips in half bond, cut to the rakes and openings, returned into the reveals to the frames.",
+   "files": [
+    {
+     "glb": "stage-9.glb",
+     "part": null,
+     "label": null,
+     "bytes": 1933728
+    }
+   ]
+  }
+ ]
+}
