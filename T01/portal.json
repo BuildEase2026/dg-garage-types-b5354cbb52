@@ -159,7 +159,7 @@
      "glb": "stage-3.glb",
      "part": null,
      "label": null,
-     "bytes": 38836
+     "bytes": 40316
     }
    ]
   },
@@ -273,11 +273,11 @@
   {
    "id": "icf",
    "title": "ICF drawings",
-   "note": "The ICF general arrangement, the wall elevations and a section.",
+   "note": "The ICF general arrangement, the wall elevations, a section and its 1:10 eaves / slab-edge details.",
    "zip": {
     "file": "downloads/DG-T01 ICF drawings.zip",
-    "bytes": 265126,
-    "count": 4
+    "bytes": 371977,
+    "count": 6
    },
    "docs": [
     {
@@ -297,7 +297,7 @@
      "file": "docs/icf/DG-T01-EL-01 North and South Elevations.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T01-EL-01.png",
-     "bytes": 75193,
+     "bytes": 75091,
      "number": "DG-T01-EL-01",
      "view": "elev-N",
      "view_opts": {}
@@ -308,7 +308,7 @@
      "file": "docs/icf/DG-T01-EL-02 East and West Elevations.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T01-EL-02.png",
-     "bytes": 78295,
+     "bytes": 78178,
      "number": "DG-T01-EL-02",
      "view": "elev-E",
      "view_opts": {}
@@ -319,9 +319,31 @@
      "file": "docs/icf/DG-T01-SE-01 Section A-A.pdf",
      "pages": 1,
      "thumb": "thumbs/DG-T01-SE-01.png",
-     "bytes": 114344,
+     "bytes": 114291,
      "number": "DG-T01-SE-01",
      "view": "stage-8",
+     "view_opts": {}
+    },
+    {
+     "id": "DG-T01-DT-01",
+     "title": "Eaves Detail",
+     "file": "docs/icf/DG-T01-DT-01 Eaves Detail.pdf",
+     "pages": 1,
+     "thumb": "thumbs/DG-T01-DT-01.png",
+     "bytes": 69452,
+     "number": "DG-T01-DT-01",
+     "view": "stage-1",
+     "view_opts": {}
+    },
+    {
+     "id": "DG-T01-DT-02",
+     "title": "Slab Edge Detail",
+     "file": "docs/icf/DG-T01-DT-02 Slab Edge Detail.pdf",
+     "pages": 1,
+     "thumb": "thumbs/DG-T01-DT-02.png",
+     "bytes": 64380,
+     "number": "DG-T01-DT-02",
+     "view": "stage-1",
      "view_opts": {}
     }
    ]
@@ -369,8 +391,8 @@
  ],
  "download_all": {
   "file": "downloads/DG-T01 Standard garage Type 01 - Brick single garage in Nudura ICF - Quotation Q01.zip",
-  "bytes": 297930,
-  "count": 7,
+  "bytes": 404798,
+  "count": 9,
   "title": "Download everything"
  }
 }
