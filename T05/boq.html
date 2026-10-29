@@ -1,0 +1,1084 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Type 05 - Rendered single garage - Turnkey BOQ</title>
+<style>
+:root{--bg:#f4f6f5;--card:#fff;--ink:#1f2a33;--muted:#5d6b74;--line:#d9dfdc;--acc:#2f5d50;--inp:#fff7d6;--fix:#e8f0ed}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,"Segoe UI",sans-serif}
+.wrap{max-width:1280px;margin:0 auto;padding:18px max(16px,env(safe-area-inset-left,0px)) 48px}
+h1{font-size:24px;margin:6px 0 2px}h2{font-size:15px;text-transform:uppercase;letter-spacing:.04em;color:var(--acc);margin:22px 0 8px}
+.note{background:#e7ece9;border:1px solid var(--line);border-radius:6px;padding:9px 12px;font-size:13px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:14px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px}.kpi b{display:block;font-size:20px;font-variant-numeric:tabular-nums}
+.kpi span{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.ctl{display:flex;flex-wrap:wrap;gap:14px;align-items:end;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-top:12px}
+.ctl label{display:grid;gap:3px;font-size:12px;color:var(--muted)}
+input[type=number]{width:96px;padding:5px 6px;border:1px solid #c9c39f;background:var(--inp);border-radius:4px;font:inherit;text-align:right;font-variant-numeric:tabular-nums}
+button{font:600 13px system-ui;padding:7px 12px;border-radius:6px;border:1px solid var(--acc);background:var(--acc);color:#fff;cursor:pointer}
+button.alt{background:#fff;color:var(--acc)}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+th{background:var(--acc);color:#fff;font-weight:600;font-size:12px;position:sticky;top:0}td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.sec td{background:#eef2f0;font-weight:700}tr.fix td{background:var(--fix)}td.src{color:var(--muted);font-size:12px;max-width:360px}
+tr.tot td{font-weight:700}
+</style></head><body><div id="dg-type-tabs" style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:8px max(16px,env(safe-area-inset-left,0px));background:#1f2a33;font:600 13px system-ui,sans-serif"><span style="color:#9fb0bd;margin-right:6px">Dortech garage types:</span><a href="../T01/" style="background:transparent;color:#e6edf2;border:1px solid #4b5b67;padding:5px 10px;border-radius:5px;text-decoration:none">01 Brick single</a><a href="../T02/" style="background:transparent;color:#e6edf2;border:1px solid #4b5b67;padding:5px 10px;border-radius:5px;text-decoration:none">02 Brick double</a><a href="../T03/" style="background:transparent;color:#e6edf2;border:1px solid #4b5b67;padding:5px 10px;border-radius:5px;text-decoration:none">03 Brick 2-storey single</a><a href="../T04/" style="background:transparent;color:#e6edf2;border:1px solid #4b5b67;padding:5px 10px;border-radius:5px;text-decoration:none">04 Brick 2-storey double</a><a href="../T05/" style="background:#fff;color:#1f2a33;padding:5px 10px;border-radius:5px;text-decoration:none">05 Rendered single</a><span title="awaiting approval" style="color:#7d8c96;border:1px dashed #4b5b67;padding:5px 10px;border-radius:5px">06 Rendered double</span><span title="awaiting approval" style="color:#7d8c96;border:1px dashed #4b5b67;padding:5px 10px;border-radius:5px">07 Rendered 2-storey single</span><span title="awaiting approval" style="color:#7d8c96;border:1px dashed #4b5b67;padding:5px 10px;border-radius:5px">08 Rendered 2-storey double</span><a href="../T05/boq.html" style="margin-left:auto;background:#f2c94c;color:#1f2a33;padding:5px 12px;border-radius:5px;text-decoration:none">Editable BOQ</a></div><div class="wrap">
+<p><a href="./">&larr; back to the 3D portal</a></p>
+<h1>Type 05 - Rendered single garage - turnkey-kit price + BOQ</h1>
+<div class="note" id="note"></div>
+<div class="kpis" id="kpis"></div>
+<div class="ctl">
+ <label for="ohp">OH&amp;P %<input type="number" id="ohp" step="0.5"></label>
+ <label for="cont">Contingency %<input type="number" id="cont" step="0.5"></label>
+ <label for="vat">VAT %<input type="number" id="vat" step="1"></label>
+ <button id="csv">Download CSV</button><button class="alt" id="reset">Reset to our rates</button>
+</div>
+<h2>A. Nudura supply - our fixed price</h2>
+<div class="tw"><table id="tA"></table></div>
+<h2>B. Turnkey-kit BOQ by package (bills) - edit the yellow cells; Bill 7 is the opening schedule</h2>
+<div class="tw"><table id="tB"></table></div>
+<h2>C. Programme - construction time per element</h2>
+<div class="tw"><table id="tC"></table></div>
+<p class="note" id="rates" style="margin-top:14px"></p>
+</div>
+<script>
+const D = {
+ "type": "T05",
+ "title": "Type 05 - Rendered single garage",
+ "dims": [
+  3638.55,
+  6076.95
+ ],
+ "sheet": [
+  3600,
+  6000
+ ],
+ "heights": {
+  "eaves": 2487.9,
+  "ridge": 3770.2,
+  "rafter_top_apex": 3670.2,
+  "rafter_soffit_apex": 3487.1,
+  "eaves_courses": 5
+ },
+ "pitch": 35.0,
+ "finish": "render",
+ "supply": [
+  {
+   "item": "Nudura 6in Standard straight form (pre-cut)",
+   "sku": "NUS-I0096-06-PC",
+   "qty": 42,
+   "unit": "nr",
+   "order": "14 x 3",
+   "rate": 149.37,
+   "per": "box of 3",
+   "total": 2091.18,
+   "note": "every form from the populated model, Nudura Bond, no stack joints"
+  },
+  {
+   "item": "Nudura 6in Standard 90 deg corner form (pre-cut)",
+   "sku": "NUS-I0090-06-PC",
+   "qty": 20,
+   "unit": "nr",
+   "order": "4 x 6",
+   "rate": 154.41,
+   "per": "box of 6",
+   "total": 617.64,
+   "note": ""
+  },
+  {
+   "item": "End caps 152 mm (6in) - opening jambs",
+   "sku": "NUS-A0ECF-06",
+   "qty": 24,
+   "unit": "nr",
+   "order": "1 x 40",
+   "rate": 105.84,
+   "per": "box of 40",
+   "total": 105.84,
+   "note": ""
+  },
+  {
+   "item": "Lintel closures 152 mm (6in) - heads + sills",
+   "sku": "NUS-PLINT-06",
+   "qty": 24,
+   "unit": "nr",
+   "order": "1 x 60",
+   "rate": 181.44,
+   "per": "box of 60",
+   "total": 181.44,
+   "note": "3 per lintel piece"
+  },
+  {
+   "item": "Spray foam (1 can per 22 forms)",
+   "sku": "NUS-SF-BOX",
+   "qty": 3,
+   "unit": "nr",
+   "order": "1 x 12",
+   "rate": 75.6,
+   "per": "box of 12",
+   "total": 75.6,
+   "note": ""
+  },
+  {
+   "item": "Fibre tape (1 roll per 50 forms)",
+   "sku": "NUS-FT-BOX",
+   "qty": 2,
+   "unit": "nr",
+   "order": "1 x 10",
+   "rate": 52.5,
+   "per": "box of 10",
+   "total": 52.5,
+   "note": ""
+  },
+  {
+   "item": "Protective tape",
+   "sku": "NUS-PT-BOX",
+   "qty": 1,
+   "unit": "nr",
+   "order": "1 x 4",
+   "rate": 33.6,
+   "per": "box of 4",
+   "total": 33.6,
+   "note": ""
+  },
+  {
+   "item": "Bracing + alignment hire (1 stillage x 1 wk)",
+   "sku": "ALIGN",
+   "qty": 1,
+   "unit": "stillage",
+   "order": "1 weeks",
+   "rate": 80.0,
+   "per": "stillage",
+   "total": 80.0,
+   "note": "hire = the ICF install only: 1 d install + 1 pour + 1 cure + 1 strike = 4 working days -> 1 wk"
+  },
+  {
+   "item": "BuildEase pre-cut service (setup + per form + cuts)",
+   "sku": "PRECUT",
+   "qty": 62,
+   "unit": "forms",
+   "order": "36 cut forms",
+   "rate": null,
+   "per": "",
+   "total": 417.0,
+   "note": "GBP 350 setup + 0.50 / form + GBP 1 / m cut (standard type - modelling included)"
+  },
+  {
+   "item": "Haulage - Tankersley S75 3DH to Leeds (<= 40 miles, 1 artic)",
+   "sku": "HAUL",
+   "qty": 1,
+   "unit": "load",
+   "order": "",
+   "rate": 335.27,
+   "per": "load",
+   "total": 335.27,
+   "note": ""
+  }
+ ],
+ "supply_total": 3990.07,
+ "boq": [
+  {
+   "sec": "Bill 1 - Preliminaries",
+   "item": "Site setup, welfare, skip, setting out",
+   "key": "prelim_setup",
+   "qty": 1,
+   "unit": "item",
+   "mat": 650.0,
+   "lab_h": 8.0,
+   "note": "NGR prelims 950 - site setup, welfare, skip, setting out (single garage)",
+   "install": 272.0,
+   "mat_total": 650.0,
+   "lab_total": 272.0,
+   "total": 922.0
+  },
+  {
+   "sec": "Bill 1 - Preliminaries",
+   "item": "Access scaffold / towers",
+   "key": "scaffold_single",
+   "qty": 1,
+   "unit": "item",
+   "mat": 480.0,
+   "lab_h": 4.0,
+   "note": "MKT tower / trestle hire 4 wk, single storey",
+   "install": 136.0,
+   "mat_total": 480.0,
+   "lab_total": 136.0,
+   "total": 616.0
+  },
+  {
+   "sec": "Bill 2 - Groundworks + substructure",
+   "item": "Excavate raft + thickened edge (reduce level 402 + edge to 500)",
+   "key": "excavate",
+   "qty": 10.03,
+   "unit": "m3",
+   "mat": 18.0,
+   "lab_h": 0.35,
+   "note": "NGR dig 32/m3 split plant / labour",
+   "install": 11.9,
+   "mat_total": 180.54,
+   "lab_total": 119.36,
+   "total": 299.9
+  },
+  {
+   "sec": "Bill 2 - Groundworks + substructure",
+   "item": "Muck away (bulked x1.25)",
+   "key": "muck_away",
+   "qty": 12.54,
+   "unit": "m3",
+   "mat": 52.0,
+   "lab_h": 0.0,
+   "note": "NGR",
+   "install": 0.0,
+   "mat_total": 652.08,
+   "lab_total": 0.0,
+   "total": 652.08
+  },
+  {
+   "sec": "Bill 2 - Groundworks + substructure",
+   "item": "RWG drainage - short run to soakaway / connection",
+   "key": "drainage_short",
+   "qty": 1,
+   "unit": "item",
+   "mat": 420.0,
+   "lab_h": 10.0,
+   "note": "MKT RWG to soakaway / short connection",
+   "install": 340.0,
+   "mat_total": 420.0,
+   "lab_total": 340.0,
+   "total": 760.0
+  },
+  {
+   "sec": "Bill 2 - Groundworks + substructure",
+   "item": "MOT Type 1 hardcore 150, compacted",
+   "key": "hardcore",
+   "qty": 1.78,
+   "unit": "m3",
+   "mat": 48.0,
+   "lab_h": 0.5,
+   "note": "NGR MOT Type 1",
+   "install": 17.0,
+   "mat_total": 85.44,
+   "lab_total": 30.26,
+   "total": 115.7
+  },
+  {
+   "sec": "Bill 2 - Groundworks + substructure",
+   "item": "Sand blinding + 1200g DPM",
+   "key": "dpm_blinding",
+   "qty": 24.32,
+   "unit": "m2",
+   "mat": 5.3,
+   "lab_h": 0.06,
+   "note": "NGR DPM 1.8 + sand blinding 3.5",
+   "install": 2.04,
+   "mat_total": 128.9,
+   "lab_total": 49.61,
+   "total": 178.51
+  },
+  {
+   "sec": "Bill 2 - Groundworks + substructure",
+   "item": "A393 mesh top + bottom (laps incl.)",
+   "key": "mesh_a393",
+   "qty": 6,
+   "unit": "sheet",
+   "mat": 70.0,
+   "lab_h": 0.35,
+   "note": "NGR A393 4.8 x 2.4",
+   "install": 11.9,
+   "mat_total": 420.0,
+   "lab_total": 71.4,
+   "total": 491.4
+  },
+  {
+   "sec": "Bill 2 - Groundworks + substructure",
+   "item": "Starter bars T12 @ 600 into the ICF + edge bars",
+   "key": "rebar",
+   "qty": 0.1,
+   "unit": "t",
+   "mat": 1250.0,
+   "lab_h": 28.0,
+   "note": "NGR rebar + fixing 28 h/t",
+   "install": 952.0,
+   "mat_total": 125.0,
+   "lab_total": 95.2,
+   "total": 220.2
+  },
+  {
+   "sec": "Bill 2 - Groundworks + substructure",
+   "item": "C32/40 raft concrete 200 + thickened edge",
+   "key": "conc_raft",
+   "qty": 6.98,
+   "unit": "m3",
+   "mat": 152.0,
+   "lab_h": 1.2,
+   "note": "NGR C32/40",
+   "install": 40.8,
+   "mat_total": 1060.96,
+   "lab_total": 284.78,
+   "total": 1345.74
+  },
+  {
+   "sec": "Bill 2 - Groundworks + substructure",
+   "item": "Concrete pump - raft pour",
+   "key": "pump",
+   "qty": 1,
+   "unit": "pour",
+   "mat": 650.0,
+   "lab_h": 0.0,
+   "note": "NGR concrete pump per pour",
+   "install": 0.0,
+   "mat_total": 650.0,
+   "lab_total": 0.0,
+   "total": 650.0
+  },
+  {
+   "sec": "Bill 2 - Groundworks + substructure",
+   "item": "Power float finish (garage floor, fall to the door)",
+   "key": "power_float",
+   "qty": 22.11,
+   "unit": "m2",
+   "mat": 1.5,
+   "lab_h": 0.08,
+   "note": "MKT",
+   "install": 2.72,
+   "mat_total": 33.16,
+   "lab_total": 60.14,
+   "total": 93.3
+  },
+  {
+   "sec": "Bill 3 - ICF walls (install + concrete)",
+   "item": "Stand the Nudura forms (62 forms, 4.3 min / form): set-out, bracing + alignment, rebar, end caps / lintels",
+   "key": "icf_erect",
+   "qty": 1,
+   "unit": "gang-day",
+   "mat": 0.0,
+   "lab_h": 24.0,
+   "note": "BOQ Builder 4.3 min per block x 3-man gang",
+   "install": 816.0,
+   "mat_total": 0.0,
+   "lab_total": 816.0,
+   "total": 816.0
+  },
+  {
+   "sec": "Bill 3 - ICF walls (install + concrete)",
+   "item": "Pour the ICF core (walls + gables, one day), 4-man pour gang",
+   "key": "icf_erect",
+   "qty": 1,
+   "unit": "gang-day",
+   "mat": 0.0,
+   "lab_h": 32.0,
+   "note": "BOQ Builder 4.3 min per block x 3-man gang",
+   "install": 1088.0,
+   "mat_total": 0.0,
+   "lab_total": 1088.0,
+   "total": 1088.0
+  },
+  {
+   "sec": "Bill 3 - ICF walls (install + concrete)",
+   "item": "Strike the bracing + alignment system (after 1 day cure)",
+   "key": "icf_erect",
+   "qty": 1,
+   "unit": "gang-day",
+   "mat": 0.0,
+   "lab_h": 24.0,
+   "note": "BOQ Builder 4.3 min per block x 3-man gang",
+   "install": 816.0,
+   "mat_total": 0.0,
+   "lab_total": 816.0,
+   "total": 816.0
+  },
+  {
+   "sec": "Bill 3 - ICF walls (install + concrete)",
+   "item": "Wall reinforcement T12 (vertical @ 600, horizontal alternate courses) + lintel bars - supply (fixing in the install line)",
+   "key": "rebar",
+   "qty": 0.17,
+   "unit": "t",
+   "mat": 1250.0,
+   "lab_h": 0.0,
+   "note": "NGR rebar + fixing 28 h/t",
+   "install": 0.0,
+   "mat_total": 212.5,
+   "lab_total": 0.0,
+   "total": 212.5
+  },
+  {
+   "sec": "Bill 3 - ICF walls (install + concrete)",
+   "item": "C32/40 core concrete 6in - supply (placing in the install line)",
+   "key": "icf_core_conc",
+   "qty": 5.96,
+   "unit": "m3",
+   "mat": 152.0,
+   "lab_h": 0.0,
+   "note": "NGR C32/40 + pour 1.2 h/m3",
+   "install": 0.0,
+   "mat_total": 905.92,
+   "lab_total": 0.0,
+   "total": 905.92
+  },
+  {
+   "sec": "Bill 3 - ICF walls (install + concrete)",
+   "item": "Concrete pump - ICF pour",
+   "key": "pump",
+   "qty": 1,
+   "unit": "pour",
+   "mat": 650.0,
+   "lab_h": 0.0,
+   "note": "NGR concrete pump per pour",
+   "install": 0.0,
+   "mat_total": 650.0,
+   "lab_total": 0.0,
+   "total": 650.0
+  },
+  {
+   "sec": "Bill 4 - Roof structure + floors (carpentry: supply + install incl. fixings)",
+   "item": "Wall plate 47 x 150 C24 treated on the eaves walls (bedded)",
+   "key": "wall_plate",
+   "qty": 12.15,
+   "unit": "m",
+   "mat": 5.6,
+   "lab_h": 0.25,
+   "note": "NGR C24 47x150 4.25/m + straps / anchors",
+   "install": 8.5,
+   "mat_total": 68.04,
+   "lab_total": 103.28,
+   "total": 171.32
+  },
+  {
+   "sec": "Bill 4 - Roof structure + floors (carpentry: supply + install incl. fixings)",
+   "item": "Wall plate fixings - M12 anchors into the ICF core @ 1,200 + washers",
+   "key": "plate_anchor",
+   "qty": 13,
+   "unit": "nr",
+   "mat": 3.2,
+   "lab_h": 0.15,
+   "note": "MKT M12 anchor / resin stud into the ICF core @ 1,200 + washer",
+   "install": 5.1,
+   "mat_total": 41.6,
+   "lab_total": 66.3,
+   "total": 107.9
+  },
+  {
+   "sec": "Bill 4 - Roof structure + floors (carpentry: supply + install incl. fixings)",
+   "item": "Trussed rafters (fink) @600, span 3.64 m",
+   "key": "trusses",
+   "qty": 10,
+   "unit": "nr",
+   "mat": 114.41,
+   "lab_h": 0.75,
+   "note": "TLS 38 + 21/m span (mat computed per type)",
+   "install": 25.5,
+   "mat_total": 1144.1,
+   "lab_total": 255.0,
+   "total": 1399.1
+  },
+  {
+   "sec": "Bill 4 - Roof structure + floors (carpentry: supply + install incl. fixings)",
+   "item": "Binders + diagonal bracing 25 x 100",
+   "key": "binders_bracing",
+   "qty": 31.48,
+   "unit": "m",
+   "mat": 1.35,
+   "lab_h": 0.08,
+   "note": "TLS 25x100 binders + diagonal bracing",
+   "install": 2.72,
+   "mat_total": 42.5,
+   "lab_total": 85.63,
+   "total": 128.13
+  },
+  {
+   "sec": "Bill 4 - Roof structure + floors (carpentry: supply + install incl. fixings)",
+   "item": "Truss clips to the wall plate (2 per truss)",
+   "key": "truss_clip",
+   "qty": 20,
+   "unit": "nr",
+   "mat": 1.1,
+   "lab_h": 0.08,
+   "note": "MKT truss clip to the wall plate",
+   "install": 2.72,
+   "mat_total": 22.0,
+   "lab_total": 54.4,
+   "total": 76.4
+  },
+  {
+   "sec": "Bill 4 - Roof structure + floors (carpentry: supply + install incl. fixings)",
+   "item": "Twist / holding-down straps (2 per truss)",
+   "key": "twist_strap",
+   "qty": 20,
+   "unit": "nr",
+   "mat": 1.4,
+   "lab_h": 0.1,
+   "note": "MKT twist / holding-down strap",
+   "install": 3.4,
+   "mat_total": 28.0,
+   "lab_total": 68.0,
+   "total": 96.0
+  },
+  {
+   "sec": "Bill 4 - Roof structure + floors (carpentry: supply + install incl. fixings)",
+   "item": "PROVISIONAL floors / decking - 18 P5 loft storage boards on the ceiling ties (storage-rated trusses)",
+   "key": "loft_boards",
+   "qty": 8.44,
+   "unit": "m2",
+   "mat": 9.5,
+   "lab_h": 0.25,
+   "note": "MKT 18 P5 loft boards (PROVISIONAL - storage trusses)",
+   "install": 8.5,
+   "mat_total": 80.18,
+   "lab_total": 71.74,
+   "total": 151.92
+  },
+  {
+   "sec": "Bill 4 - Roof structure + floors (carpentry: supply + install incl. fixings)",
+   "item": "PROVISIONAL - 47 x 72 noggins under the board edges",
+   "key": "noggins",
+   "qty": 14.07,
+   "unit": "m",
+   "mat": 1.9,
+   "lab_h": 0.1,
+   "note": "MKT 47 x 72 C16 noggins",
+   "install": 3.4,
+   "mat_total": 26.73,
+   "lab_total": 47.84,
+   "total": 74.57
+  },
+  {
+   "sec": "Bill 4 - Roof structure + floors (carpentry: supply + install incl. fixings)",
+   "item": "PROVISIONAL - deck screws",
+   "key": "deck_screws",
+   "qty": 8.44,
+   "unit": "m2",
+   "mat": 0.6,
+   "lab_h": 0.0,
+   "note": "MKT deck screws",
+   "install": 0.0,
+   "mat_total": 5.06,
+   "lab_total": 0.0,
+   "total": 5.06
+  },
+  {
+   "sec": "Bill 4 - Roof structure + floors (carpentry: supply + install incl. fixings)",
+   "item": "PROVISIONAL - insulated loft hatch + folding ladder",
+   "key": "loft_hatch",
+   "qty": 1,
+   "unit": "nr",
+   "mat": 185.0,
+   "lab_h": 2.0,
+   "note": "MKT insulated loft hatch + folding ladder (PROVISIONAL)",
+   "install": 68.0,
+   "mat_total": 185.0,
+   "lab_total": 68.0,
+   "total": 253.0
+  },
+  {
+   "sec": "Bill 4 - Roof structure + floors (carpentry: supply + install incl. fixings)",
+   "item": "Gable ladders (barge, rails, outriggers 47 x 72)",
+   "key": "binders_bracing",
+   "qty": 29.58,
+   "unit": "m",
+   "mat": 1.35,
+   "lab_h": 0.08,
+   "note": "TLS 25x100 binders + diagonal bracing",
+   "install": 2.72,
+   "mat_total": 39.93,
+   "lab_total": 80.46,
+   "total": 120.39
+  },
+  {
+   "sec": "Bill 4 - Roof structure + floors (carpentry: supply + install incl. fixings)",
+   "item": "Gable lateral restraint straps @ 2 m to the trusses / rafters (both gables)",
+   "key": "restraint_strap",
+   "qty": 8,
+   "unit": "nr",
+   "mat": 4.5,
+   "lab_h": 0.2,
+   "note": "MKT galv lateral restraint strap 30 x 5 x 1000 (BS EN 845-1)",
+   "install": 6.8,
+   "mat_total": 36.0,
+   "lab_total": 54.4,
+   "total": 90.4
+  },
+  {
+   "sec": "Bill 4 - Roof structure + floors (carpentry: supply + install incl. fixings)",
+   "item": "Carpentry sundries - nails, screws, framing anchors",
+   "key": "carp_sundries",
+   "qty": 1,
+   "unit": "item",
+   "mat": 45.0,
+   "lab_h": 0.0,
+   "note": "MKT nails, screws, framing anchors",
+   "install": 0.0,
+   "mat_total": 45.0,
+   "lab_total": 0.0,
+   "total": 45.0
+  },
+  {
+   "sec": "Bill 5 - Roof coverings + rainwater goods",
+   "item": "Breathable roofing membrane (laps incl.)",
+   "key": "membrane",
+   "qty": 36.2,
+   "unit": "m2",
+   "mat": 1.1,
+   "lab_h": 0.03,
+   "note": "TLS breather membrane",
+   "install": 1.02,
+   "mat_total": 39.82,
+   "lab_total": 36.92,
+   "total": 76.74
+  },
+  {
+   "sec": "Bill 5 - Roof coverings + rainwater goods",
+   "item": "Treated battens 25 x 50 @ 345 gauge",
+   "key": "battens",
+   "qty": 126.3,
+   "unit": "m",
+   "mat": 0.85,
+   "lab_h": 0.02,
+   "note": "TLS 25x50 treated",
+   "install": 0.68,
+   "mat_total": 107.35,
+   "lab_total": 85.88,
+   "total": 193.23
+  },
+  {
+   "sec": "Bill 5 - Roof coverings + rainwater goods",
+   "item": "Marley Modern smooth grey tiles (drawn: 308, +3% breakage)",
+   "key": "tiles",
+   "qty": 318,
+   "unit": "nr",
+   "mat": 1.48,
+   "lab_h": 0.035,
+   "note": "WEB Marley Modern smooth grey ex VAT; ~0.37 h/m2 roofer",
+   "install": 1.19,
+   "mat_total": 470.64,
+   "lab_total": 378.42,
+   "total": 849.06
+  },
+  {
+   "sec": "Bill 5 - Roof coverings + rainwater goods",
+   "item": "Dry ridge + half-round ridge tiles (15 drawn)",
+   "key": "dry_ridge",
+   "qty": 6.38,
+   "unit": "m",
+   "mat": 24.0,
+   "lab_h": 0.35,
+   "note": "MKT dry ridge kit + half-round ridge tiles",
+   "install": 11.9,
+   "mat_total": 153.12,
+   "lab_total": 75.92,
+   "total": 229.04
+  },
+  {
+   "sec": "Bill 5 - Roof coverings + rainwater goods",
+   "item": "Dry verge units",
+   "key": "dry_verge",
+   "qty": 9.86,
+   "unit": "m",
+   "mat": 14.0,
+   "lab_h": 0.2,
+   "note": "MKT dry verge units",
+   "install": 6.8,
+   "mat_total": 138.04,
+   "lab_total": 67.05,
+   "total": 205.09
+  },
+  {
+   "sec": "Bill 5 - Roof coverings + rainwater goods",
+   "item": "uPVC fascia 22 x 200 + vented soffit",
+   "key": "fascia_soffit",
+   "qty": 12.75,
+   "unit": "m",
+   "mat": 16.0,
+   "lab_h": 0.35,
+   "note": "TLS uPVC fascia / soffit",
+   "install": 11.9,
+   "mat_total": 204.0,
+   "lab_total": 151.72,
+   "total": 355.72
+  },
+  {
+   "sec": "Bill 5 - Roof coverings + rainwater goods",
+   "item": "uPVC barge boards 22 x 225",
+   "key": "barge",
+   "qty": 9.86,
+   "unit": "m",
+   "mat": 14.0,
+   "lab_h": 0.3,
+   "note": "TLS uPVC barge board",
+   "install": 10.2,
+   "mat_total": 138.04,
+   "lab_total": 100.57,
+   "total": 238.61
+  },
+  {
+   "sec": "Bill 5 - Roof coverings + rainwater goods",
+   "item": "Half-round gutter 112 black + fittings",
+   "key": "gutter",
+   "qty": 12.75,
+   "unit": "m",
+   "mat": 11.0,
+   "lab_h": 0.2,
+   "note": "TLS half-round gutter + brackets",
+   "install": 6.8,
+   "mat_total": 140.25,
+   "lab_total": 86.7,
+   "total": 226.95
+  },
+  {
+   "sec": "Bill 5 - Roof coverings + rainwater goods",
+   "item": "Downpipe sets 68 round black: swan neck to the outlet, clipped to the side wall (4 clips), shoe",
+   "key": "downpipe",
+   "qty": 2,
+   "unit": "nr",
+   "mat": 38.0,
+   "lab_h": 1.0,
+   "note": "TLS downpipe set",
+   "install": 34.0,
+   "mat_total": 76.0,
+   "lab_total": 68.0,
+   "total": 144.0
+  },
+  {
+   "sec": "Bill 6 - External wall finish",
+   "item": "Dryvit Primus M base coat 25 kg",
+   "key": "dryvit_basecoat",
+   "qty": 3,
+   "unit": "pail",
+   "mat": 23.18,
+   "lab_h": 0.0,
+   "note": "SAP PRIMUS M 25 kg",
+   "install": 0.0,
+   "mat_total": 69.54,
+   "lab_total": 0.0,
+   "total": 69.54
+  },
+  {
+   "sec": "Bill 6 - External wall finish",
+   "item": "Dryvit Standard Plus mesh (laps incl.)",
+   "key": "dryvit_mesh",
+   "qty": 47.58,
+   "unit": "m2",
+   "mat": 1.33,
+   "lab_h": 0.0,
+   "note": "SAP Standard Plus mesh 50 m2 roll 66.73",
+   "install": 0.0,
+   "mat_total": 63.28,
+   "lab_total": 0.0,
+   "total": 63.28
+  },
+  {
+   "sec": "Bill 6 - External wall finish",
+   "item": "Dryvit Color Prime Plus 4 gal",
+   "key": "dryvit_primer",
+   "qty": 2,
+   "unit": "pail",
+   "mat": 51.79,
+   "lab_h": 0.0,
+   "note": "SAP Color Prime Plus 4 gal",
+   "install": 0.0,
+   "mat_total": 103.58,
+   "lab_total": 0.0,
+   "total": 103.58
+  },
+  {
+   "sec": "Bill 6 - External wall finish",
+   "item": "Dryvit PMR Sandpebble finish 24.72 kg",
+   "key": "dryvit_finish",
+   "qty": 4,
+   "unit": "pail",
+   "mat": 59.9,
+   "lab_h": 0.0,
+   "note": "SAP PMR Sandpebble 24.72 kg",
+   "install": 0.0,
+   "mat_total": 239.6,
+   "lab_total": 0.0,
+   "total": 239.6
+  },
+  {
+   "sec": "Bill 6 - External wall finish",
+   "item": "Apply Dryvit 500 (base + mesh + prime + finish)",
+   "key": "dryvit_apply",
+   "qty": 41.37,
+   "unit": "m2",
+   "mat": 0.0,
+   "lab_h": 0.75,
+   "note": "NGR Dryvit 0.75 h/m2",
+   "install": 25.5,
+   "mat_total": 0.0,
+   "lab_total": 1054.93,
+   "total": 1054.93
+  },
+  {
+   "sec": "Bill 6 - External wall finish",
+   "item": "Dryvit beads (base, corner, stop, reveal)",
+   "key": "dryvit_beads",
+   "qty": 77.2,
+   "unit": "m",
+   "mat": 1.3,
+   "lab_h": 0.05,
+   "note": "SAP corner / stop / bellcast beads per 2.5 m (2.16-3.31)",
+   "install": 1.7,
+   "mat_total": 100.36,
+   "lab_total": 131.24,
+   "total": 231.6
+  },
+  {
+   "sec": "Bill 7 - Opening schedule (doors + windows)",
+   "item": "L1-D01 Electric insulated roller garage door 2,400 x 2,286 S.O., RAL 7016: 77 slats, box behind the lintel course, guides, tubular motor, 2 remotes, manual override, brush seals",
+   "key": "garage_door_single",
+   "qty": 1,
+   "unit": "nr",
+   "mat": 1658.37,
+   "lab_h": 6.0,
+   "note": "MKT electric insulated roller door 2.4 x 2.3, Yorkshire supply; accessories GBP 8.37 incl.",
+   "install": 204.0,
+   "mat_total": 1658.37,
+   "lab_total": 204.0,
+   "total": 1862.37
+  },
+  {
+   "sec": "Bill 7 - Opening schedule (doors + windows)",
+   "item": "L1-D02 Composite personnel door 900 x 2,286 S.O.: frame, fixed overpanel, multipoint lock, lever handles, low threshold; illbruck ME110 internal membrane (5.5 m) + sealant",
+   "key": "personnel_door",
+   "qty": 1,
+   "unit": "nr",
+   "mat": 1067.94,
+   "lab_h": 5.44,
+   "note": "NGR single door (composite + overpanel); accessories GBP 17.94 incl.",
+   "install": 184.96,
+   "mat_total": 1067.94,
+   "lab_total": 184.96,
+   "total": 1252.9
+  },
+  {
+   "sec": "Bill 7 - Opening schedule (doors + windows)",
+   "item": "L1-W01 Alu-clad timber window 1,200 x 914 S.O., RAL 7016, DGU, trickle vent, handles, aluminium cill; illbruck ME110 internal membrane (4.2 m) + sealant",
+   "key": "window",
+   "qty": 1,
+   "unit": "nr",
+   "mat": 753.29,
+   "lab_h": 3.34,
+   "note": "NGR 280 per window + 420/m2 (base on the window line); accessories GBP 12.43 incl.",
+   "install": 113.56,
+   "mat_total": 753.29,
+   "lab_total": 113.56,
+   "total": 866.85
+  },
+  {
+   "sec": "Bill 8 - Electrical installation",
+   "item": "2 double sockets + 2 LED battens, sub-board, short feed, test + cert",
+   "key": "elec_single",
+   "qty": 1,
+   "unit": "item",
+   "mat": 520.0,
+   "lab_h": 14.0,
+   "note": "TLS / MKT 2 double sockets, 2 LED battens, sub-board, short feed, test + cert",
+   "install": 476.0,
+   "mat_total": 520.0,
+   "lab_total": 476.0,
+   "total": 996.0
+  },
+  {
+   "sec": "Bill 9 - Design + approvals (provisional)",
+   "item": "Building control (provisional)",
+   "key": "bc_fee",
+   "qty": 1,
+   "unit": "item",
+   "mat": 650.0,
+   "lab_h": 0.0,
+   "note": "Building control (LABC) - provisional",
+   "install": 0.0,
+   "mat_total": 650.0,
+   "lab_total": 0.0,
+   "total": 650.0
+  },
+  {
+   "sec": "Bill 9 - Design + approvals (provisional)",
+   "item": "Structural engineer - calcs + details (provisional)",
+   "key": "engineer",
+   "qty": 1,
+   "unit": "item",
+   "mat": 850.0,
+   "lab_h": 0.0,
+   "note": "Structural engineer calcs - provisional",
+   "install": 0.0,
+   "mat_total": 850.0,
+   "lab_total": 0.0,
+   "total": 850.0
+  },
+  {
+   "sec": "Bill 9 - Design + approvals (provisional)",
+   "item": "Drawings / lawful development certificate (provisional)",
+   "key": "design",
+   "qty": 1,
+   "unit": "item",
+   "mat": 1250.0,
+   "lab_h": 0.0,
+   "note": "Drawings / PD certificate / planning - provisional",
+   "install": 0.0,
+   "mat_total": 1250.0,
+   "lab_total": 0.0,
+   "total": 1250.0
+  }
+ ],
+ "boq_net": 25561.53,
+ "labour_rate": 34.0,
+ "ohp_pct": 15.0,
+ "contingency_pct": 10.0,
+ "vat_pct": 20.0,
+ "programme": [
+  [
+   "Site setup + setting out",
+   0.5,
+   "welfare, skip, set out the raft"
+  ],
+  [
+   "Below ground - excavation, muck away, drainage",
+   1.9,
+   "2 operatives + excavator"
+  ],
+  [
+   "Footings / substructure - hardcore, DPM, mesh, starter bars",
+   1.0,
+   ""
+  ],
+  [
+   "Raft pour + power float",
+   1.0,
+   "pump on site"
+  ],
+  [
+   "Raft cure before the ICF",
+   3.0,
+   "minimum before standing the forms (7 days before full load)"
+  ],
+  [
+   "ICF install - stand forms, rebar, bracing + alignment",
+   1.0,
+   "3-man gang, 4.3 min / form"
+  ],
+  [
+   "ICF pour (walls + gables)",
+   1.0,
+   "4-man pour gang + pump"
+  ],
+  [
+   "ICF cure",
+   1.0,
+   ""
+  ],
+  [
+   "Strike the bracing + alignment",
+   1.0,
+   "alignment hire = 4 working days -> 1 wk"
+  ],
+  [
+   "Roof structure",
+   1.8,
+   "trusses / rafters + ridge, ladders"
+  ],
+  [
+   "Roof coverings + rainwater goods",
+   1.9,
+   "2 roofers"
+  ],
+  [
+   "Doors, windows + opening tapes",
+   1.0,
+   ""
+  ],
+  [
+   "External finish",
+   2.2,
+   "2 operatives (Dryvit - weather dependent, >= 5 C)"
+  ],
+  [
+   "Electrics + test",
+   1.8,
+   "1 electrician"
+  ],
+  [
+   "Snag + clean",
+   0.5,
+   ""
+  ]
+ ],
+ "install": {
+  "icf_labour_minutes": 3363.05,
+  "icf_labour_hours": 56.05083333333334,
+  "icf_labour_days": 7.006354166666667,
+  "calendar_days": 12.006354166666668,
+  "pour_days": 2,
+  "snag_days": 2,
+  "cure_calendar_days": 4,
+  "crane_days": 0,
+  "pump_days": 2,
+  "out_of_scope_notes": [
+   "Scaffold and edge protection",
+   "Wall plate fixing (roofers' scope)",
+   "Roof structure labour (separate joinery gang)",
+   "Concrete supply",
+   "Pump driver",
+   "ICF block supply pricing",
+   "Labour rate \u00a3/day (applied by contractor)"
+  ]
+ },
+ "programme_days": 20.6,
+ "boq_with_ohp": 29395.76,
+ "total_net": 33385.83,
+ "total_with_contingency": 36724.41,
+ "total_inc_vat": 44069.29,
+ "note": "SUPPLY SCOPE: the Nudura ICF formwork + accessories (section A) are our FIXED price. Every other package (section B) is the turnkey-kit BOQ at indicative Leeds / Yorkshire Q4 2026 rates - supplied in good faith, every rate editable, to be checked by the relevant professional and priced by the contractor. All figures ex VAT unless stated. QUOTATION - NOT FOR CONSTRUCTION.",
+ "rates_note": "Dortech garage types - turnkey-kit BOQ rates, Leeds / Yorkshire, Q4 2026, EX VAT, net of OH&P (applied on the BOQ). Material = supply rate per unit; labour = hours per unit x the gang rate. INDICATIVE - every rate is editable on the portal BOQ page and in the workbook. Sources: [PB] Nudura Price Book v0001 (12.10.26, Tankersley); [SAP] Tremco Dryvit SAP price export (03.07.26); [NGR] Nudura Garden Rooms engine.js DEFAULT_RATES (UK 2026 trade); [TLS] TLS Garden Rooms engine.js; [WEB] merchant prices checked 28.10.26 (Marley Modern ~GBP 1.48 + VAT each, 10.7/m2); [MKT] market rate (no source on the machine - brick slips installed GBP 120-200/m2 on EPS incl. insulation; ours is slips only on the Nudura EPS). Yorkshire factor 0.95 applied to UK labour (Leeds below the UK mean)."
+};
+const KEY = "dg-boq2-" + D.type;
+const f2 = v => (Math.round(v*100)/100).toLocaleString("en-GB",{minimumFractionDigits:2,maximumFractionDigits:2});
+let st;
+function fresh(){ return {lab:D.labour_rate, ohp:D.ohp_pct, cont:D.contingency_pct, vat:D.vat_pct, rows:D.boq.map(b=>({qty:b.qty, mat:b.mat, inst:b.install})), prog:D.programme.map(p=>p[1])}; }
+try { st = JSON.parse(localStorage.getItem(KEY)) || fresh(); if (st.rows.length !== D.boq.length) st = fresh(); } catch(e){ st = fresh(); }
+const save = ()=>{ try{ localStorage.setItem(KEY, JSON.stringify(st)); }catch(e){} };
+document.getElementById("note").textContent = D.note;
+document.getElementById("rates").textContent = D.rates_note;
+["ohp","cont","vat"].forEach(k=>{ const el=document.getElementById(k); el.value=st[k]; el.addEventListener("input",()=>{ st[k]=+el.value||0; save(); calc(); }); });
+document.getElementById("tA").innerHTML = "<tr><th>Item</th><th>SKU</th><th>Qty</th><th>Order</th><th>Box price</th><th>Total</th><th>Note</th></tr>" +
+  D.supply.map(a=>`<tr class="fix"><td>${a.item}</td><td>${a.sku}</td><td class="n">${a.qty}</td><td>${a.order}</td><td class="n">${a.rate==null?"":f2(a.rate)}</td><td class="n">${f2(a.total)}</td><td class="src">${a.note||""}</td></tr>`).join("") +
+  `<tr class="tot"><td colspan="5">Supply total (fixed)</td><td class="n">${f2(D.supply_total)}</td><td></td></tr>`;
+function buildB(){
+  let h = "<tr><th>Item</th><th>Qty</th><th>Unit</th><th>Supply rate</th><th>Install rate</th><th>Supply</th><th>Install</th><th>Total</th><th>Source / note</th></tr>", sec="";
+  D.boq.forEach((b,i)=>{
+    if (b.sec !== sec){ sec=b.sec; h += `<tr class="sec"><td colspan="7">${sec}</td><td class="n" id="s-${sec.split(" - ")[0].replace(/ /g,"-")}"></td><td></td></tr>`; }
+    h += `<tr><td>${b.item}</td><td class="n"><input type="number" step="0.01" id="q${i}" aria-label="quantity"></td><td>${b.unit}</td>
+      <td class="n"><input type="number" step="0.01" id="m${i}" aria-label="material rate"></td><td class="n"><input type="number" step="0.01" id="h${i}" aria-label="install rate"></td>
+      <td class="n" id="mt${i}"></td><td class="n" id="lt${i}"></td><td class="n" id="tt${i}"></td><td class="src">${b.note}</td></tr>`;
+  });
+  h += `<tr class="tot"><td colspan="7">BOQ net</td><td class="n" id="bnet"></td><td></td></tr><tr class="tot"><td colspan="7" id="bohpl"></td><td class="n" id="bohp"></td><td></td></tr>`;
+  document.getElementById("tB").innerHTML = h;
+  D.boq.forEach((b,i)=>{ [["q","qty"],["m","mat"],["h","inst"]].forEach(([p,k])=>{ const el=document.getElementById(p+i); el.value=st.rows[i][k]; el.addEventListener("input",()=>{ st.rows[i][k]=+el.value||0; save(); calc(); }); }); });
+}
+function buildC(){
+  let h = "<tr><th>Element</th><th>Working days</th><th>Note</th></tr>";
+  D.programme.forEach((p,i)=>{ h += `<tr><td>${p[0]}</td><td class="n"><input type="number" step="0.5" id="p${i}" aria-label="days"></td><td class="src">${p[2]}</td></tr>`; });
+  h += `<tr class="tot"><td>Total</td><td class="n" id="pt"></td><td id="pw"></td></tr>`;
+  document.getElementById("tC").innerHTML = h;
+  D.programme.forEach((p,i)=>{ const el=document.getElementById("p"+i); el.value=st.prog[i]; el.addEventListener("input",()=>{ st.prog[i]=+el.value||0; save(); calc(); }); });
+}
+let last;
+function calc(){
+  let net=0; const secs={};
+  D.boq.forEach((b,i)=>{ const r=st.rows[i], m=r.qty*r.mat, l=r.qty*r.inst, t=m+l; net+=t; const s=b.sec.split(" - ")[0].replace(/ /g,"-"); secs[s]=(secs[s]||0)+t;
+    document.getElementById("mt"+i).textContent=f2(m); document.getElementById("lt"+i).textContent=f2(l); document.getElementById("tt"+i).textContent=f2(t); });
+  Object.entries(secs).forEach(([s,v])=>{ const el=document.getElementById("s-"+s); if(el) el.textContent=f2(v); });
+  const ohp = net*(1+st.ohp/100), tot = D.supply_total+ohp, cont = tot*(1+st.cont/100), vat = cont*(1+st.vat/100);
+  document.getElementById("bnet").textContent=f2(net); document.getElementById("bohpl").textContent=`BOQ + OH&P ${st.ohp}%`; document.getElementById("bohp").textContent=f2(ohp);
+  const days = st.prog.reduce((a,b)=>a+b,0); document.getElementById("pt").textContent=days.toFixed(1); document.getElementById("pw").textContent=`about ${Math.ceil(days/5)} weeks`;
+  document.getElementById("kpis").innerHTML = [["Nudura supply (fixed)",D.supply_total],["Turnkey BOQ + OH&P",ohp],["Total net",tot],[`+ contingency ${st.cont}%`,cont],[`Total inc VAT ${st.vat}%`,vat]]
+    .map(([k,v])=>`<div class="kpi"><span>${k}</span><b>&pound;${f2(v)}</b></div>`).join("") + `<div class="kpi"><span>Programme</span><b>${days.toFixed(1)} days</b></div>`;
+  last = {net, ohp, tot, cont, vat, days};
+}
+document.getElementById("reset").addEventListener("click",()=>{ st=fresh(); save(); ["ohp","cont","vat"].forEach(k=>document.getElementById(k).value=st[k]); buildB(); buildC(); calc(); });
+document.getElementById("csv").addEventListener("click",()=>{
+  const q = s => '"' + String(s).replace(/"/g,'""') + '"';
+  const L = [["Bill","Item","Qty","Unit","Supply rate","Install rate","Supply","Install","Total"].map(q).join(",")];
+  D.supply.forEach(a=>L.push([q("A Nudura supply (fixed)"),q(a.item),a.qty,q(a.order),a.rate??"","","","",a.total].join(",")));
+  D.boq.forEach((b,i)=>{ const r=st.rows[i]; const m=r.qty*r.mat, l=r.qty*r.inst; L.push([q(b.sec),q(b.item),r.qty,q(b.unit),r.mat,r.inst,m.toFixed(2),l.toFixed(2),(m+l).toFixed(2)].join(",")); });
+  L.push(["","Total net","","","","","","",last.tot.toFixed(2)].join(",")); L.push(["","Total inc VAT + contingency","","","","","","",last.vat.toFixed(2)].join(","));
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([L.join("\n")],{type:"text/csv"})); a.download = `DG-${D.type} turnkey BOQ.csv`; a.click();
+});
+buildB(); buildC(); calc();
+</script></body></html>
