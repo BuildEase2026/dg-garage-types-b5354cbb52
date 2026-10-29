@@ -8,7 +8,7 @@
    "desc": "Indicative 200 RC raft with a 600 x 450 thickened edge under the ICF, on DPM and 150 hardcore (engineer to design).",
    "files": [
     {
-     "glb": "stage-1.glb?v=431cc6513d",
+     "glb": "stage-1.glb",
      "part": null,
      "label": null,
      "bytes": 7220
@@ -21,7 +21,7 @@
    "desc": "Nudura 6in Standard on Nudura Bond, 3,639 x 6,077 outside - webs on the grid from both corners, NO stack joints; eaves walls 5 courses to the plate, gables raked to the roof; garage door with a one-course lintel, personnel door and windows on course lines. Every form as it would be laid.",
    "files": [
     {
-     "glb": "stage-2.glb?v=51fec3945e",
+     "glb": "stage-2.glb",
      "part": null,
      "label": null,
      "bytes": 206912
@@ -34,7 +34,7 @@
    "desc": "Trussed rafters (fink) @600 with binders, gable ladders (indicative).",
    "files": [
     {
-     "glb": "stage-3.glb?v=95997eb35d",
+     "glb": "stage-3.glb",
      "part": null,
      "label": null,
      "bytes": 40316
@@ -47,7 +47,7 @@
    "desc": "Breathable roofing membrane and 25 x 50 treated battens.",
    "files": [
     {
-     "glb": "stage-4.glb?v=330eb817ee",
+     "glb": "stage-4.glb",
      "part": null,
      "label": null,
      "bytes": 6816
@@ -60,7 +60,7 @@
    "desc": "Marley Modern smooth grey concrete interlocking tiles, every tile drawn in broken bond, half-round dry ridge, dry verge, PVC-u fascia / soffit / 22 x 225 barge boards, half-round gutters + downpipes.",
    "files": [
     {
-     "glb": "stage-5.glb?v=af685a327c",
+     "glb": "stage-5.glb",
      "part": null,
      "label": null,
      "bytes": 60524
@@ -73,7 +73,7 @@
    "desc": "Anthracite (RAL 7016) window(s), composite personnel door, electric roller garage door (supplier).",
    "files": [
     {
-     "glb": "stage-6.glb?v=7a2e438786",
+     "glb": "stage-6.glb",
      "part": null,
      "label": null,
      "bytes": 20500
@@ -86,7 +86,7 @@
    "desc": "Tremco CPG illbruck ME110 internal window membrane round every opening (garage door excluded).",
    "files": [
     {
-     "glb": "stage-7.glb?v=2b76ac5b5e",
+     "glb": "stage-7.glb",
      "part": null,
      "label": null,
      "bytes": 2852
@@ -99,7 +99,7 @@
    "desc": "Monolith BrickPlus brick slip system (or equal) on the Nudura EPS, every slip drawn: 215 x 65 x 20 slips at 75 courses, 10 joints, L-shaped corner slips in half bond, cut to the rakes and openings, returned into the reveals to the frames.",
    "files": [
     {
-     "glb": "stage-8.glb?v=5472437792",
+     "glb": "stage-8.glb",
      "part": null,
      "label": null,
      "bytes": 458112
